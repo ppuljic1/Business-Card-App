@@ -18,10 +18,11 @@ if( $_SERVER['REQUEST_METHOD'] === 'POST' ) {
             $image = $_SERVER['DOCUMENT_ROOT'] . '/assets/img/cards' . $_FILES["cardImage"]["name"];
         
             $card = new BusinessCardClass($fname, $lname, $company, $position, $phoneNum, $email, $color, $image);
-        
-            if( $card->create() != 'error' ) {
+            
+            $fileName = $card->create();
+            if( $fileName != 'error' ) {
                 unlink($image);
-                header("Location: http://business-card-app.loc/yourCard.php?PDF=$fileName");
+                header("Location: http://business-card-app.loc/pages/cardView.php?PDF=$fileName");
                 exit();
             }else {
                 header("Location: http://business-card-app.loc/?PDF=false");

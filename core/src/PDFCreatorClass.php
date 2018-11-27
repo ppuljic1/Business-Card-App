@@ -31,7 +31,7 @@ class PDFCreatorClass
         $pdf->cell(30, 6, $this->card->phoneNum, 0, 1, 'L' );
         $pdf->cell(30, 6, $this->card->email, 0, 1, 'L' );
 
-        $fileName = str_replace(' ','_',$fullName).rand(0,100) . '.pdf'
+        $fileName = str_replace(' ','_',$fullName).rand(0,100) . '.pdf';
         $location = $_SERVER['DOCUMENT_ROOT'] . '/assets/img/cards/'. $fileName;
 
         if( $this->savePDF($pdf, $location) == '' ) {
