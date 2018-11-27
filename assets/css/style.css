@@ -1,0 +1,12 @@
+.jumbotron.jumbotron-fluid 
+{
+    background-image:url('../../assets/img/site/header_img.jpg'); 
+    background-position: right bottom; 
+    height:90%;
+}
+
+.btn.btn-primary 
+{
+    background-color:#46494A;
+    border-color:#46494A;
+}
